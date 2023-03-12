@@ -10,8 +10,8 @@ public class MyPanel extends JPanel implements ActionListener {
     Image enemy;
     Image backgroundImage;
     Timer timer;
-    int l1=125,l2=125,m1=20,m2=10,xStart=PANEL_WIDTH/2,yStart=PANEL_HEIGHT/2,x1,x2,y1,y2,g=1;
-    double teta1=Math.PI,teta2=Math.PI+0.00001,a1_v,a2_v,a1_a,a2_a;
+    int l1=125,l2=125,m1=10,m2=10,xStart=PANEL_WIDTH/2,yStart=PANEL_HEIGHT/2,x1,x2,y1,y2;
+    double teta1=Math.PI,teta2=Math.PI/2,a1_v,a2_v,a1_a,a2_a,g=0.4;
     int xVelocity = 3;
     int yVelocity = 1;
     int x = 0;
@@ -32,6 +32,8 @@ public class MyPanel extends JPanel implements ActionListener {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
         // g2D.drawImage(enemy, x, y, null);
+        g2D.setPaint(Color.red);
+        g2D.setStroke(new BasicStroke(4));
         g2D.drawLine(xStart,yStart,x1,y1);
         g2D.drawLine(x1,y1,x2,y2);
         g2D.drawOval(x1-5,y1-5,10,10);
@@ -79,4 +81,6 @@ public class MyPanel extends JPanel implements ActionListener {
 
 
     }
+
+
 }
